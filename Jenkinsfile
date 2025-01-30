@@ -52,7 +52,7 @@ pipeline {
     registryCredential = 'eagunuworld-docker-username-and-pwd'
     dockerImage = ''
     //latest_version_update
-    imageVersion = "eagunuworld/jjva-mss-java-web-app:v$BUILD_NUMBER"
+    imageVersion = "eagunuworld/jjva-mss-java-web-img-app:v$BUILD_NUMBER"
     // This can be nexus3 or nexus2
     NEXUS_VERSION = "nexus3"
     // This can be http or https
@@ -60,7 +60,7 @@ pipeline {
     // Where your Nexus is running
     NEXUS_URL = "34.139.133.51:8081"
     // Repository where we will upload the artifact
-    NEXUS_REPOSITORY = "jjva-mss-java-web-app"
+    NEXUS_REPOSITORY = "jjva-mss-java-warfile-app"
     // Jenkins credential id to authenticate to Nexus OSS
     NEXUS_CREDENTIAL_ID = "nexus-username-password-creds-demoshool"
     //sonar qube
