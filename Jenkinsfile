@@ -46,7 +46,7 @@ pipeline {
     jjva_java_sonar_token="sqp_da82a7f45bdab2684f0a676b2561f59f23e1b67e"
     //Sonareqube externalIP Idress
     sonar_IP_address="35.227.84.245"
-    //eagunu docker registry repository
+    //eagunu docker registry repository login
     registry = "eagunuworld/jjva-mss-java-web-img-app"
     //eagunu dockerhub registry
     registryCredential = 'eagunuworld-docker-username-and-pwd'
