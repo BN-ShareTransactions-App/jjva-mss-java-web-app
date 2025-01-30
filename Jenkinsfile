@@ -21,9 +21,9 @@ pipeline {
   environment {
     //Apps environments properties
     myApp="mss-java-app"
-    sonarName="jjva-mss-java-web-app"
-    dockerName="jjva-mss-java-web-app"
-    nexusName="jjva-mss-java-web-app"
+    sonarName="jjva-mss-java-web-report-app"
+    dockerName="jjva-mss-java-web-img-app"
+    nexusName="jjva-mss-java-warfile-app"
     promeName="prometheus-server"
     alertM="prometheus-alertmanager"
     alertName="prometheus-alertmanager"
@@ -43,9 +43,9 @@ pipeline {
     GIT_PREVIOUS_SUCCESSFUL_COMMIT   = "${GIT_PREVIOUS_SUCCESSFUL_COMMIT}"
     BUILD_NUMBER = "${env.BUILD_ID}"
     //jjva-mss-java-web-app sonarqubetoken
-    jjva_java_sonar_token="sqp_db11ea5f16674caeb3bafc7ae4c9d760dd24d042"
+    jjva_java_sonar_token="sqp_da82a7f45bdab2684f0a676b2561f59f23e1b67e"
     //Sonareqube externalIP Idress
-    sonar_IP_address="35.229.80.79"
+    sonar_IP_address="35.227.84.245"
     //eagunu docker registry repository
     registry = "eagunuworld/jjva-mss-java-web-app"
     //eagunu dockerhub registry
@@ -58,7 +58,7 @@ pipeline {
     // This can be http or https
     NEXUS_PROTOCOL = "http"
     // Where your Nexus is running
-    NEXUS_URL = "34.121.109.88:8081"
+    NEXUS_URL = "34.139.133.51:8081"
     // Repository where we will upload the artifact
     NEXUS_REPOSITORY = "jjva-mss-java-web-app"
     // Jenkins credential id to authenticate to Nexus OSS
@@ -89,7 +89,8 @@ pipeline {
     stage ('SonarQubeReports') {
       steps {
       //sh 'mvn clean package sonar:sonar'
-      sh "mvn clean clean package sonar:sonar -Dsonar.projectKey=jjva-mss-java-web-app -Dsonar.projectName='jjva-mss-java-web-app' -Dsonar.host.url=http://${sonar_IP_address}:9000 -Dsonar.token=${jjva_java_sonar_token}"
+      //sh "mvn clean clean package sonar:sonar -Dsonar.projectKey=jjva-mss-java-web-app -Dsonar.projectName='jjva-mss-java-web-app' -Dsonar.host.url=http://${sonar_IP_address}:9000 -Dsonar.token=${jjva_java_sonar_token}"
+      sh "mvn clean package sonar:sonar -Dsonar.projectKey=jjva-mss-java-web-report-app -Dsonar.projectName='jjva-mss-java-web-report-app' -Dsonar.host.url=http://${sonar_IP_address}:9000 -Dsonar.token=${jjva_java_sonar_token}"
          }
      }
 
