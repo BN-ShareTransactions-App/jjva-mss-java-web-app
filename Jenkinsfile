@@ -21,7 +21,7 @@ pipeline {
   environment {
     //Apps environments properties
     myApp="mss-java-app"
-    sonarName="jjva-mss-java-web-report-app"
+    sonarName="jjva-mss-java-web-rp-app"
     dockerName="jjva-mss-java-web-ig-app"
     nexusName="jjva-mss-java-warfile-app"
     promeName="prometheus-server"
@@ -43,7 +43,7 @@ pipeline {
     GIT_PREVIOUS_SUCCESSFUL_COMMIT   = "${GIT_PREVIOUS_SUCCESSFUL_COMMIT}"
     BUILD_NUMBER = "${env.BUILD_ID}"
     //jjva-mss-java-web-app sonarqubetoken
-    jjva_java_sonar_token="sqp_db11ea5f16674caeb3bafc7ae4c9d760dd24d042"
+    jjva_java_sonar_token="sqp_cbbffd96dc9619e69f35dd36475509aa872bfc84"
     //Sonareqube externalIP Idress
     sonar_IP_address="34.75.174.149"
     //eagunu docker registry repository
@@ -89,7 +89,8 @@ pipeline {
     stage ('SonarQubeReports') {
       steps {
       //sh 'mvn clean package sonar:sonar'
-      sh "mvn clean clean package sonar:sonar -Dsonar.projectKey=jjva-mss-java-web-app -Dsonar.projectName='jjva-mss-java-web-app' -Dsonar.host.url=http://${sonar_IP_address}:9000 -Dsonar.token=${jjva_java_sonar_token}"
+      //sh "mvn clean clean package sonar:sonar -Dsonar.projectKey=jjva-mss-java-web-app -Dsonar.projectName='jjva-mss-java-web-app' -Dsonar.host.url=http://${sonar_IP_address}:9000 -Dsonar.token=${jjva_java_sonar_token}"
+      sh "mvn clean clean package sonar:sonar -Dsonar.projectKey=jjva-mss-java-web-rp-app -Dsonar.projectName='jjva-mss-java-web-rp-app' -Dsonar.host.url=http://${sonar_IP_address}:9000 -Dsonar.token=${jjva_java_sonar_token}"
          }
      }
 
