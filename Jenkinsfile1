@@ -22,7 +22,7 @@ pipeline {
     //Apps environments properties
     myApp="mss-java-app"
     sonarName="jjva-mss-java-web-report-app"
-    dockerName="jjva-mss-java-web-ig-app"
+    dockerName="jjva-mss-java-web-img-app"
     nexusName="jjva-mss-java-warfile-app"
     promeName="prometheus-server"
     alertM="prometheus-alertmanager"
@@ -41,12 +41,12 @@ pipeline {
     GIT_PREVIOUS_SUCCESSFUL_COMMIT   = "${GIT_PREVIOUS_SUCCESSFUL_COMMIT}"
     BUILD_NUMBER = "${env.BUILD_ID}"
     //eagunu docker registry repository login
-    registry = "eagunuworld/jjva-mss-java-web-ig-app"
+    registry = "eagunuworld/jjva-mss-java-web-img-app"
     //eagunu dockerhub registry
     registryCredential = 'eagunuworld-docker-username-and-pwd'
     dockerImage = ''
     //latest_version_update
-    imageVersion = "eagunuworld/jjva-mss-java-web-img-app:$BUILD_NUMBER"
+    imageVersion = "eagunuworld/jjva-mss-java-web-img-app:v$BUILD_NUMBER"
     }
 
    stages {
@@ -65,7 +65,7 @@ pipeline {
       stage('Building our image') {
            steps{
                 script {
-                   dockerImage = docker.build registry + "$BUILD_NUMBER"
+                   dockerImage = docker.build registry + ":v$BUILD_NUMBER"
                   }
               }
            }
