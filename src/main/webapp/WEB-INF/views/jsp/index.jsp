@@ -40,7 +40,7 @@
 
 	<div class="row">
 		<div class="col-md-8">
-			<h2>My Name is Garen For Short,I Am Four Years Old,Bye Mummy, Vanessa And Emmanuel.</h2>
+			<h2>DevOps Engineer Is A Difficult Task If You Ask Me.</h2>
 			<h3>Contact @ +8324387775</h3>
 		</div>
 	</div>
