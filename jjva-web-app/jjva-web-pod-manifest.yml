@@ -40,7 +40,7 @@ spec:
               - mpm
       containers:
       - name: mss-java-con
-        image: eagunuworld/jjva-mss-java-web-ig-app11
+        image: eagunuworld/jjva-mss-java-web-ig-app13 
         ports:
         - containerPort: 8080
         readinessProbe:
