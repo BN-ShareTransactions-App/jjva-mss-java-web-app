@@ -30,8 +30,8 @@ pipeline {
     graName="grafana"
     //website url properties
     webSite="http://mdb.eagunu4live.com/java-web-app"
-    sonarIP="http://34.75.174.149"
-    nexusIP="http://34.23.207.210"
+    sonarIP="http://35.185.51.144"
+    nexusIP="http://35.229.127.140"
     promeLink="http://prome.eagunu4live.com"
     grafanaURL="http://grafana.eagunu4live.com"
     alertURL="http://alert.eagunu4live.com"
@@ -45,7 +45,7 @@ pipeline {
     //jjva-mss-java-web-app sonarqubetoken
     jjva_java_sonar_token="sqp_cbbffd96dc9619e69f35dd36475509aa872bfc84"
     //Sonareqube externalIP Idress
-    sonar_IP_address="34.75.174.149"
+    sonar_IP_address="35.185.51.144"
     //eagunu docker registry repository
     registry = "eagunuworld/jjva-mss-java-web-ig-app"
     //eagunu dockerhub registry
@@ -58,7 +58,7 @@ pipeline {
     // This can be http or https
     NEXUS_PROTOCOL = "http"
     // Where your Nexus is running
-    NEXUS_URL = "34.23.207.210:8081"
+    NEXUS_URL = "35.229.127.140:8081"
     // Repository where we will upload the artifactj
     NEXUS_REPOSITORY = "jjva-mss-java-warfile-app"
     // Jenkins credential id to authenticate to Nexus OSS
@@ -147,7 +147,7 @@ pipeline {
       stage('Building our image') {
            steps{
                 script {
-                   dockerImage = docker.build registry + "$BUILD_NUMBER"
+                   dockerImage = docker.build registry
                   }
               }
            }
