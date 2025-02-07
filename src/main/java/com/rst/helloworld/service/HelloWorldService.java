@@ -14,7 +14,7 @@ public class HelloWorldService {
 
 		logger.debug("getDesc() is executed!");
 
-		return "DevSecOps Tools; Kubernetes,Docker,Puppet,Jenkins,Terraform And Clouds";
+		return "DevSecOps Tools; Kubernetes,Docker,Puppet,Jenkins,Terraform,Cloud,Snake And SonarQube";
 
 	}
 
