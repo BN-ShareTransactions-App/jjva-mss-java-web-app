@@ -5,7 +5,7 @@ metadata:
   name: mss-java-svc
   namespace: jjva-ns-svc-pod
 spec:
-  type: LoadBalancer #LoadBalancer #ClusterIP
+  type: ClusterIP #LoadBalancer #ClusterIP
   selector:
     app: mss-java-svc
   ports:
